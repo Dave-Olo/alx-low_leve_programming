@@ -1,2 +1,2 @@
-# alx-low_leve_programming
+# alx-low_level_programming
 This is c programming language
