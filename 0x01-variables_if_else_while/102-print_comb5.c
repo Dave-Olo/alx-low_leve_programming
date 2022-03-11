@@ -14,7 +14,7 @@ int main(void)
 		{
 			if (num2 = num)
 			{
-				putchar(num2 + 'num' );
+				putchar(num2 + num );
 			}
 			else if (num2 > num)
 			{
