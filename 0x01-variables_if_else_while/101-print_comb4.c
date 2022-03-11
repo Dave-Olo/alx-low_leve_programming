@@ -1,32 +1,52 @@
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int num, num2, num3;
+	int n;
+	int i;
+	int j;
+	int iInicial;
+	int jInicial;
+	int printComa;
 
-	for (num = 0; num < 10; num++)
+	iInicial = 48;
+	jInicial = 48;
+	printComa = 0;
+	for (n = 48; n < 58; n++)
 	{
-		for (num2 = 1; num2 < 10; num2++)
+		for (i = iInicial; i < 58; i++)
 		{
-			for (num3 = 1; num3 < 10; num3++)
+			for (j = jInicial; j < 58; j++)
 			{
-
-			if (num2 > num && num3 > num2)
+				if (n != i && i != j)
 				{
-				putchar(num + '0');
-				putchar(num2 + '0');
-				if (num == 7 && num2 == 8 && num3 ==9)
-				{
-				putchar(10);
-				break;
-				}
-			else
-				{
-					putchar(',');
-					putchar(' ');
+					if (printComa)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+					else
+					{
+						printComa = 1;
+					}
+					putchar(n);
+					putchar(i);
+					putchar(j);
 				}
 			}
-		
-		      }
+			jInicial++;
+		}
+		iInicial++;
+		jInicial = iInicial;
 	}
-}
+	putchar(10);
 	return (0);
 }
+

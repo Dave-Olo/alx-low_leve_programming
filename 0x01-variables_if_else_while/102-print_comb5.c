@@ -1,37 +1,48 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
+
 /**
-* main - entry point
-* print all possible combinations of 2 digits
-* Return: Always 0 Success
-*/
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int num, num2;
+	int n;
+	int i;
+	int iInicial;
+	int printComa;
 
-	for (num = 0; num < 10; num++)
+	iInicial = 0;
+	printComa = 0;
+	for (n = 0; n < 100; n++)
 	{
-		for (num2 = 0; num2 < 10; num2++)
+		for (i = iInicial; i < 100; i++)
 		{
-			if (num2 = num)
+			if (n != i)
 			{
-				putchar(num2 + num );
-			}
-			else if (num2 > num)
-			{
-				putchar(num + '0');
-				putchar(num2 + '0');
-				if (num == 9 && num2 == 9)
-				{
-					putchar(10);
-					break;
-				}
-				else
+				if (printComa)
 				{
 					putchar(',');
 					putchar(' ');
 				}
+				else
+				{
+					printComa = 1;
+				}
+				putchar((n / 10) + 48);
+				putchar((n % 10) + 48);
+				putchar(' ');
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
 			}
+
 		}
+		iInicial++;
 	}
+	putchar(10);
 	return (0);
 }
+
+
