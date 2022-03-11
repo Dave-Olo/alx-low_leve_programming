@@ -1,4 +1,4 @@
-:#include<stdio.h>
+#include<stdio.h>
 /**
 * main -Entry point
 * putchar to print single digit numberz
