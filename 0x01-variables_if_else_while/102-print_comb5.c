@@ -12,8 +12,9 @@ int main(void)
 	{
 		for (num2 = 0; num2 < 10; num2++)
 		{
-			if (num2 = num){
-				putchar(num2 + 'num' )
+			if (num2 = num)
+			{
+				putchar(num2 + 'num' );
 			}
 			else if (num2 > num)
 			{
