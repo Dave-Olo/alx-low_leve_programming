@@ -2,13 +2,14 @@
 
 int main(void)
 {
-	char c[] = "_putchar";
+	char c[8] = "_putchar";
 	
 	int i = 0;
 	
-	for(i=0; i < 9; i++)
+	while (i < 8)
+	{
 		_putchar(c[i]);
-		
+		i++;	
 
 	}
 	_putchar('\n');
