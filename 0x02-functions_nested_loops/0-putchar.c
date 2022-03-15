@@ -1,4 +1,4 @@
-#include "Main.h"
+#include "main.h"
 /**
 * main - Entry point
 * _putchar function to print a string.
