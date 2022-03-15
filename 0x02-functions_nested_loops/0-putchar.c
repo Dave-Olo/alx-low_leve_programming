@@ -1,4 +1,4 @@
-#include "main.h"
+#include "Main.h"
 /**
 * main - Entry point
 * _putchar function to print a string.
@@ -6,14 +6,14 @@
 */
 int main(void)
 {
-	char c[8] = "_putchar";
+	char ch[] = "_putchar";
 	int i = 0;
 
 	while (i < 8)
 	{
-		_putchar(c[i]);
-		i++;	
+		_putchar(ch[i]);
+		i++;
 	}
-	_putchar('\n');
+	_putchar(10);
 	return (0);
 }
