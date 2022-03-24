@@ -1,13 +1,12 @@
 #include "main.h"
-/**
-* _strncat - function
-* @dest: destination of copy
-* @src: source of copy
-* @n: string limit of copy
-*
-* Description: concats two strings together limited by n
-* Return: dest
-*/
+
+/* _strncat - function*/
+/*dest: destination of copy*/
+/*src: source of copy*/
+/*n: string limit of copy*/
+
+/* Description: concats two strings together limited by n */
+
 char *_strncat(char *dest, char *src, int n)
 {
 	int len, len2;
