@@ -1,24 +1,32 @@
 #include "main.h"
+
 /**
-* _strncat - function
-* @dest: destination of copy
-* @src: source of copy
-* @n: string limit of copy
-*
-* Description: concats two strings together limited by n
-* Return: dest
-*/
+ * _strncat - concatenates two strings.
+ *
+ * @dest: string to be modified.
+ * @src: string to be copied to the end of dest.
+ * @n: numbers of chars to be copied from src to dest.
+ *
+ * Return: pointer to dest.
+ */
 char *_strncat(char *dest, char *src, int n)
 {
-	int len, len2;
+	int dest_index = 0;
+	int src_index = 0;
 
-	for (len = 0; dest[len]; len++)
-		;
-	for (len2 = 0; src[len2]; len2++)
+	while (*(dest + dest_index) != '\0')
+		dest_index++;
+
+	while (*(src + src_index) != '\0' && src_index < n)
 	{
-		if (n > len2)
-			dest[len] = src[len2];
-			len++;
+		*(dest + dest_index) = *(src + src_index);
+		dest_index++;
+		src_index++;
 	}
+
+	*(dest + dest_index) = '\0';
+
 	return (dest);
+
+
 }
