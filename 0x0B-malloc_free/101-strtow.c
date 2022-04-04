@@ -1,28 +1,41 @@
-#include  <main.h>
+#include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
+int _strlen(char *s);
 /**
- * strtow - splits a string into words.
- *
- * @str: string to be splited.
- *
- * Return: ponter to array of words
- */
+* strtow - function
+* @str: string to split
+*
+* Description: function to split a string into words
+* Return: pointer or NULL if fail
+*/
 char **strtow(char *str)
 {
-	int count_p;
-	char *s;
-	int i, j;
+	char **split;
 
-	if (str == NULL || str == "")
+	split = malloc(_strlen(str) * sizeof(char *));
+	if (str == NULL)
+		return (NULL);
+	if (split == NULL)
 		return (NULL);
 
-	for (count_p = 0; str[count_p]; count_p++)
+	return (split);
+}
+/**
+* _strlen - function
+* @s: first operand & pointer
+*
+* Description: function that returns the length of a string
+* Return: Always 0
+*/
+int _strlen(char *s)
+{
+	int index = 0;
+
+	while (*s != '\0')
 	{
-		if (str[count_p] == ' ')
-			count_p++;
+		index++;
+		s++;
 	}
-
-	s = malloc(sizeof(char *) * count_p + 1);
-	if (s == NULL)
-		return (NULL);
+	return (index);
 }
