@@ -26,10 +26,3 @@ char **strtow(char *str)
 	if (s == NULL)
 		return (NULL);
 }
-/*
- * 
- *
- * @varName: 
- *
- * Return: void
- */
