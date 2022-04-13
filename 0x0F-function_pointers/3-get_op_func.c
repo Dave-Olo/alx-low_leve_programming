@@ -1,16 +1,14 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
- * get_op_func - function that selects the correct function to perform
- * the operation asked by the user
- *
- * @s: char that means the operation
- *
- * Return: pointer to function that performed the operaion.
- */
-int (*get_op_func(char *s))(int num1, int num2)
+* get_op_func - check if a number is equal to 98
+* @s: the integer to check
+*
+* Return: result
+*/
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -20,17 +18,18 @@ int (*get_op_func(char *s))(int num1, int num2)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i = 0;
+	int i;
 
-	while (ops[i].op)
+	i = 0;
+	while (ops[i].op != NULL && ops[i].f != NULL)
 	{
-		if ((ops[i])->op == *s && *(s + 1) == '\0')
-			return (ops[i].f);
-
-		i++;
+		if (strcmp((ops[i].op), s) == 0)
+		{
+		return (ops[i].f);
+		}
+	i++;
 	}
-
 	printf("Error\n");
 	exit(99);
-
+return (0);
 }
