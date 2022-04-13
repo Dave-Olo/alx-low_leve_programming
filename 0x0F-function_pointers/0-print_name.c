@@ -1,17 +1,14 @@
-#include <stdio.h>
 #include "function_pointers.h"
-
 /**
- * print_name - call back a function
- * @name: pointer to a name of the person
- * @f: function to call
- *
- * Return: Nothing.
- */
+* print_name - function
+* @name: name of string to print
+* @f: pointer to func print_name
+*
+* Function to print a name
+* Return: 0
+*/
 void print_name(char *name, void (*f)(char *))
 {
-	if (!(name && f))
-		return;
-
-	f(name);
+	if (f != NULL)
+		f(name);
 }
