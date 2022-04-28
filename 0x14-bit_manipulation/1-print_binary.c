@@ -1,31 +1,36 @@
 #include "main.h"
+
 /**
-* print_binary - function
-* @n:number to convert
-*
-* Description: Function to print binary conv of number given
-* Return: converted number
-*/
+ * print_binary - prints the binary representation of a number.
+ *
+ * @n: number to be printed in binary format
+ *
+ * Return: nothing.
+ */
 void print_binary(unsigned long int n)
 {
-	unsigned long int i = 0;
+	unsigned long int mask = 1, copy_of_n = n;
 
-	if (n == 0)
-		_putchar(n + '0');
-
-	while (n > 0)
+	/* find the mask*/
+	copy_of_n >>= 1;
+	while (copy_of_n)
 	{
-		if ((n & 1) == 0)
+		mask <<= 1;
+		copy_of_n >>= 1;
+	}
+
+	/* print he number */
+	if (!n)
+	{
+		_putchar ('0');
+	}
+	else
+	{
+		while (mask)
 		{
-			i += (i + 0);
-			n = n >> 1;
-			_putchar('0');
+			_putchar ((n & mask) ? '1' : '0');
+			mask >>= 1;
 		}
-		else
-		{
-			i += (i + 1);
-			n = n >> 1;
-			_putchar('1');
-		}
+
 	}
 }
